@@ -1,15 +1,27 @@
 import matplotlib.pyplot as plt
 
+def add_scatter_labels(x,y):
+    for i in range(len(x)):
+        plt.text(x[i],
+                 y[i],
+                 f'{y[i]}'),
+        fontsize=10,
+        ha = 'left'
+        va = 'bottom'
+                  
+
 
 x = [1,2,3,4,5,6]
 y = [10,15,20,25,30,35]
 c = [5,10,15,20,25,30]
 colores = ['red','blue','green','yellow','pink','black']
 sizes = [50,100,200,300,400,500]
+plt.scatter(x,c,color="yellow",marker='o',s=100,alpha=1)
+plt.scatter(x,y,color='red',marker='*',s=sizes,alpha=1)
 
-plt.scatter(x,c,color=colores,marker='+',s=100,alpha=0.7)
 
-plt.scatter(x,y,color='orange',marker='*',s=sizes,alpha=0.5)
+add_scatter_labels(x,y)
+
 
 plt.title("Scatter plot")
 plt.xlabel("X-axies")
